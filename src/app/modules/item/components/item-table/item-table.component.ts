@@ -14,7 +14,7 @@ export class ItemTableComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getItems().subscribe((items) => {
-      console.log(items);
+      this.items = items;
     });
   }
 }
