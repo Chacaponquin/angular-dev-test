@@ -4,10 +4,16 @@ import { CategoryTableComponent } from './components/category-table/category-tab
 import { CreateCategoryComponent } from './components/create-category/create-category.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialUiModule } from '../material-ui/material-ui.module';
+import { UpdateCategoryComponent } from './components/update-category/update-category.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
-  declarations: [CategoryTableComponent, CreateCategoryComponent],
-  imports: [CommonModule, ReactiveFormsModule, MaterialUiModule],
+  declarations: [
+    CategoryTableComponent,
+    CreateCategoryComponent,
+    UpdateCategoryComponent,
+  ],
+  imports: [CommonModule, ReactiveFormsModule, MaterialUiModule, RouterModule],
   exports: [],
 })
 export class CategoryModule {}
