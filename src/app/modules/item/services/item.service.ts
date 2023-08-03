@@ -37,6 +37,10 @@ export class ItemService {
     return this.categoryService.getAllCategories();
   }
 
+  deleteItem(itemID: string): Observable<void> {
+    return this.httpClient.post<void>(`Item/${itemID}/Remove`, {});
+  }
+
   public createItem(
     createItemDTO: Omit<CreateItemDTO, 'code'>
   ): Observable<void> {

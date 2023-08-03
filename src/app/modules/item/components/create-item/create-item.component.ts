@@ -27,6 +27,8 @@ export class CreateItemComponent implements OnInit {
     categoryId: new FormControl(''),
   });
 
+  loading = false;
+
   ngOnInit(): void {
     this.service.getCategories().subscribe((categories) => {
       this.categories = categories;
@@ -38,8 +40,14 @@ export class CreateItemComponent implements OnInit {
   }
 
   createItem(): void {
-    this.service.createItem(this.itemForm.value).subscribe(() => {
-      this.router.navigate([ROUTES.ITEMS_LIST]);
-    });
+    if (this.itemForm.valid) {
+      this.loading = true;
+
+      this.service.createItem(this.itemForm.value).subscribe(() => {
+        this.loading = false;
+
+        this.router.navigate([ROUTES.ITEMS_LIST]);
+      });
+    }
   }
 }

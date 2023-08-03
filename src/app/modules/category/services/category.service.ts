@@ -16,6 +16,10 @@ export class CategoryService {
     return this.httpClient.post<void>('Category', category);
   }
 
+  deleteCategory(categoryID: string): Observable<void> {
+    return this.httpClient.post<void>(`Category/${categoryID}/Remove`, {});
+  }
+
   getAllCategories(): Observable<Array<Category>> {
     return this.httpClient
       .post<SearchCategoryResponse>('Category/Search', {

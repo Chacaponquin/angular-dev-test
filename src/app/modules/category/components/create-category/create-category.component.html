@@ -1,4 +1,4 @@
-<section class="pt-48 flex justify-center items-center">
+<section class="pt-32 flex justify-center items-center">
   <div class="flex flex-col w-[500px]">
     <form
       action=""
@@ -16,8 +16,19 @@
         <textarea matInput formControlName="description"></textarea>
       </mat-form-field>
 
-      <div class="flex justify-end w-full">
-        <button mat-raised-button color="primary" type="submit">Create</button>
+      <div class="flex justify-end w-full gap-x-5">
+        <button
+          mat-raised-button
+          disabled="{{ loading }}"
+          color="primary"
+          type="submit"
+        >
+          Create
+        </button>
+
+        <a href="/categories">
+          <button mat-raised-button disabled="{{ loading }}">Cancel</button>
+        </a>
       </div>
     </form>
   </div>

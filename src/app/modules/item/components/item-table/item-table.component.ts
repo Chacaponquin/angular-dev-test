@@ -9,13 +9,28 @@ import { Item } from '../../model';
 })
 export class ItemTableComponent implements OnInit {
   items: Array<Item> = [];
-  displayedColumns = ['Name', 'Category', 'Description'];
+  displayedColumns = ['Name', 'Category', 'Description', 'Options'];
+
+  deleteLoading = false;
 
   constructor(private readonly service: ItemService) {}
 
   ngOnInit(): void {
+    this.getItems();
+  }
+
+  getItems(): void {
     this.service.getItems().subscribe((items) => {
       this.items = items;
+    });
+  }
+
+  deleteItem(itemID: string): void {
+    this.deleteLoading = true;
+
+    this.service.deleteItem(itemID).subscribe(() => {
+      this.deleteLoading = false;
+      this.getItems();
     });
   }
 }

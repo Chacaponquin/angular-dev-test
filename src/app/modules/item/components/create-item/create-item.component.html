@@ -1,4 +1,4 @@
-<section class="pt-48 w-full flex justify-center">
+<section class="pt-32 w-full flex justify-center">
   <div class="flex flex-col w-[600px]">
     <form
       action=""
@@ -28,14 +28,29 @@
         </mat-form-field>
       </div>
 
-      <mat-select formControlName="categoryId" class="mt-3">
+      <mat-select
+        *ngIf="categories.length"
+        formControlName="categoryId"
+        class="mt-3"
+      >
         <mat-option *ngFor="let cat of categories" value="{{ cat.id }}">{{
           cat.name
         }}</mat-option>
       </mat-select>
 
-      <div class="flex justify-end mt-5">
-        <button mat-raised-button color="primary" type="submit">Create</button>
+      <div class="flex justify-end mt-5 gap-x-5">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          disabled="{{ loading }}"
+        >
+          Create
+        </button>
+
+        <a href="/items">
+          <button mat-raised-button disabled="{{ loading }}">Cancel</button>
+        </a>
       </div>
     </form>
   </div>

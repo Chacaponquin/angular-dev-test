@@ -21,10 +21,17 @@ export class CreateCategoryComponent implements OnInit {
     description: new FormControl(''),
   });
 
+  loading = false;
+
   createCategory(): void {
     if (this.createForm.valid) {
+      this.loading = true;
+
       const data = this.createForm.value;
+
       this.services.createCategory(data).subscribe(() => {
+        this.loading = false;
+
         this.router.navigate([ROUTES.CATEGORIES_LIST]);
       });
     }
