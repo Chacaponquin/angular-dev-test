@@ -4,6 +4,7 @@ import { ItemTableComponent } from './modules/item/components/item-table/item-ta
 import { CreateItemComponent } from './modules/item/components/create-item/create-item.component';
 import { CategoryTableComponent } from './modules/category/components/category-table/category-table.component';
 import { CreateCategoryComponent } from './modules/category/components/create-category/create-category.component';
+import { ROUTES } from './constants/routes';
 
 const routes: Routes = [
   {
@@ -16,8 +17,8 @@ const routes: Routes = [
     component: ItemTableComponent,
   },
   { path: 'create-item', component: CreateItemComponent },
-  { path: 'categories', component: CategoryTableComponent },
-  { path: 'create_category', component: CreateCategoryComponent },
+  { path: ROUTES.CATEGORIES_LIST, component: CategoryTableComponent },
+  { path: ROUTES.CREATE_CATEGORY, component: CreateCategoryComponent },
 ];
 
 @NgModule({
