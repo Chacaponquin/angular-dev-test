@@ -8,5 +8,6 @@ import { MaterialUiModule } from '../material-ui/material-ui.module';
 @NgModule({
   declarations: [CategoryTableComponent, CreateCategoryComponent],
   imports: [CommonModule, ReactiveFormsModule, MaterialUiModule],
+  exports: [],
 })
 export class CategoryModule {}

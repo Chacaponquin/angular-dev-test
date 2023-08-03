@@ -13,10 +13,10 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'items',
+    path: ROUTES.ITEMS_LIST,
     component: ItemTableComponent,
   },
-  { path: 'create-item', component: CreateItemComponent },
+  { path: ROUTES.CREATE_ITEM, component: CreateItemComponent },
   { path: ROUTES.CATEGORIES_LIST, component: CategoryTableComponent },
   { path: ROUTES.CREATE_CATEGORY, component: CreateCategoryComponent },
 ];

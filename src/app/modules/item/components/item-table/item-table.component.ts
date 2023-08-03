@@ -9,6 +9,7 @@ import { Item } from '../../model';
 })
 export class ItemTableComponent implements OnInit {
   items: Array<Item> = [];
+  displayedColumns = ['Name', 'Category', 'Description'];
 
   constructor(private readonly service: ItemService) {}
 
