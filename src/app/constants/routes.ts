@@ -5,4 +5,5 @@ export const ROUTES = {
 
   ITEMS_LIST: 'items',
   CREATE_ITEM: 'create_item',
+  UPDATE_ITEM: 'update_item/:id',
 } as const;

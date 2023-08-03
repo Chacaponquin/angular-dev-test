@@ -6,6 +6,7 @@ import { CategoryTableComponent } from './modules/category/components/category-t
 import { CreateCategoryComponent } from './modules/category/components/create-category/create-category.component';
 import { ROUTES } from './constants/routes';
 import { UpdateCategoryComponent } from './modules/category/components/update-category/update-category.component';
+import { UpdateItemComponent } from './modules/item/components/update-item/update-item.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: ROUTES.CATEGORIES_LIST, component: CategoryTableComponent },
   { path: ROUTES.CREATE_CATEGORY, component: CreateCategoryComponent },
   { path: ROUTES.UPDATE_CATEGORY, component: UpdateCategoryComponent },
+  { path: ROUTES.UPDATE_ITEM, component: UpdateItemComponent },
 ];
 
 @NgModule({

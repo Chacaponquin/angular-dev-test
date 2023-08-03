@@ -1,0 +1,47 @@
+<section class="pt-32 w-full flex justify-center">
+  <div class="flex flex-col w-[600px]">
+    <form
+      action=""
+      [formGroup]="itemForm"
+      (ngSubmit)="updateItem()"
+      class="flex flex-col w-full"
+    >
+      <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+
+      <div class="flex gap-x-4 justify-between">
+        <mat-form-field>
+          <mat-label>Price</mat-label>
+          <input matInput formControlName="defaultPrice" type="number" />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Cost</mat-label>
+          <input matInput formControlName="defaultCost" type="number" />
+        </mat-form-field>
+      </div>
+
+      <div class="flex justify-end mt-5 gap-x-5">
+        <button
+          mat-raised-button
+          color="primary"
+          type="submit"
+          disabled="{{ loading }}"
+        >
+          Update
+        </button>
+
+        <a href="/items">
+          <button mat-raised-button disabled="{{ loading }}">Cancel</button>
+        </a>
+      </div>
+    </form>
+  </div>
+</section>
