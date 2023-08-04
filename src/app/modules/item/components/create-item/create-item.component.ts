@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Category } from 'src/app/modules/category/model';
 import { ItemService } from '../../services/item.service';
 import { Router } from '@angular/router';
@@ -20,11 +20,11 @@ export class CreateItemComponent implements OnInit {
   categories: Array<Category> = [];
 
   itemForm = this.fb.group({
-    name: new FormControl(''),
-    description: new FormControl(''),
-    price: new FormControl(0),
-    cost: new FormControl(0),
-    categoryId: new FormControl(''),
+    name: new FormControl('', [Validators.required]),
+    description: new FormControl('', [Validators.required]),
+    price: new FormControl(0, [Validators.required]),
+    cost: new FormControl(0, [Validators.required]),
+    categoryId: new FormControl('', [Validators.required]),
   });
 
   loading = false;

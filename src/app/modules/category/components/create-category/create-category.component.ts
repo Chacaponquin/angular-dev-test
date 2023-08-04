@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoryService } from '../../services/category.service';
-import { FormBuilder, FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ROUTES } from 'src/app/constants/routes';
 
@@ -17,8 +17,8 @@ export class CreateCategoryComponent implements OnInit {
   ) {}
 
   createForm = this.fb.group({
-    name: new FormControl(''),
-    description: new FormControl(''),
+    name: new FormControl('', [Validators.required]),
+    description: new FormControl('', [Validators.required]),
   });
 
   loading = false;
