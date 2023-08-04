@@ -22,7 +22,10 @@ export class CategoryTableComponent implements OnInit {
   }
 
   getCategories(): void {
-    this.service.getAllCategories().subscribe((cat) => (this.categories = cat));
+    this.service.getAllCategories().subscribe((cat) => {
+      this.deleteLoading = false;
+      this.categories = cat;
+    });
   }
 
   deleteCategory(categoryID: string): void {
@@ -30,7 +33,6 @@ export class CategoryTableComponent implements OnInit {
 
     this.service.deleteCategory(categoryID).subscribe(() => {
       this.getCategories();
-      this.deleteLoading = false;
     });
   }
 }

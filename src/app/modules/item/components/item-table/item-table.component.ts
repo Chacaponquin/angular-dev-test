@@ -22,6 +22,7 @@ export class ItemTableComponent implements OnInit {
   getItems(): void {
     this.service.getItems().subscribe((items) => {
       this.items = items;
+      this.deleteLoading = false;
     });
   }
 
@@ -30,7 +31,6 @@ export class ItemTableComponent implements OnInit {
 
     this.service.deleteItem(itemID).subscribe(() => {
       this.getItems();
-      this.deleteLoading = false;
     });
   }
 }
