@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Item } from '../model';
 import { ROUTES } from '../constants/routes';
 import { map } from 'rxjs/operators';
-import { GetItemDTO } from '../dto/get-items.dto';
+import { GetItemResponse } from '../dto/get.dto';
 import { CreateItemDTO } from '../dto/create.dto';
 import { v4 as uuid } from 'uuid';
 import { CategoryService } from '../../category/services/category.service';
@@ -23,9 +23,9 @@ export class ItemService {
 
   public getItems(): Observable<Item[]> {
     return this.httpClient
-      .post<GetItemDTO>(ROUTES.GET_ITEMS, {
+      .post<GetItemResponse>(ROUTES.GET_ITEMS, {
         pageNo: 0,
-        pageSize: 5,
+        pageSize: 10000,
         filters: null,
       })
       .pipe(

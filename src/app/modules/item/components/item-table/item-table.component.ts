@@ -29,8 +29,8 @@ export class ItemTableComponent implements OnInit {
     this.deleteLoading = true;
 
     this.service.deleteItem(itemID).subscribe(() => {
-      this.deleteLoading = false;
       this.getItems();
+      this.deleteLoading = false;
     });
   }
 }

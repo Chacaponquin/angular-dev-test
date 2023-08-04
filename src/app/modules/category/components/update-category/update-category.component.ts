@@ -34,7 +34,7 @@ export class UpdateCategoryComponent implements OnInit {
       const data = this.form.value;
       this.services.updateCategory(this.category.id, data).subscribe(() => {
         this.loading = false;
-
+        alert('Category updated');
         this.router.navigate([ROUTES.CATEGORIES_LIST]);
       });
     }

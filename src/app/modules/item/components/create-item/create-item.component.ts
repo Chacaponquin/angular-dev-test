@@ -45,7 +45,7 @@ export class CreateItemComponent implements OnInit {
 
       this.service.createItem(this.itemForm.value).subscribe(() => {
         this.loading = false;
-
+        alert('Item created');
         this.router.navigate([ROUTES.ITEMS_LIST]);
       });
     }

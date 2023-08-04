@@ -31,7 +31,7 @@ export class CreateCategoryComponent implements OnInit {
 
       this.services.createCategory(data).subscribe(() => {
         this.loading = false;
-
+        alert('Category created');
         this.router.navigate([ROUTES.CATEGORIES_LIST]);
       });
     }

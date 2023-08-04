@@ -47,7 +47,7 @@ export class CategoryService {
     return this.httpClient
       .post<SearchCategoryResponse>('Category/Search', {
         pageNo: 0,
-        pageSize: 5,
+        pageSize: 10000,
         filters: null,
       })
       .pipe(

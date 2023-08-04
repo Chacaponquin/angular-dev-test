@@ -1,0 +1,19 @@
+<div class="h-screen w-full flex pt-32 justify-center">
+  <div class="flex flex-wrap gap-x-10">
+    <section
+      *ngFor="let section of sections"
+      class="flex flex-col items-center"
+    >
+      <img
+        src="{{ section.image }}"
+        alt="{{ section.alt }}"
+        class="w-[300px] h-[300px] object-contain"
+      />
+      <a routerLink="{{ section.route }}">
+        <button mat-raised-button color="primary">
+          {{ section.buttonText }}
+        </button>
+      </a>
+    </section>
+  </div>
+</div>

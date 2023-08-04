@@ -57,7 +57,7 @@ export class UpdateItemComponent implements OnInit {
         })
         .subscribe(() => {
           this.loading = false;
-
+          alert('Item updated');
           this.router.navigate([ROUTES.ITEMS_LIST]);
         });
     }

@@ -1,4 +1,6 @@
 export const ROUTES = {
+  ROOT: '',
+
   CATEGORIES_LIST: 'categories',
   CREATE_CATEGORY: 'create_category',
   UPDATE_CATEGORY: 'update_category/:id',

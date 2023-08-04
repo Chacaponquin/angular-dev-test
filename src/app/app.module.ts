@@ -8,9 +8,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { CategoryModule } from './modules/category/category.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialUiModule } from './modules/material-ui/material-ui.module';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     ItemModule,
@@ -18,6 +19,7 @@ import { MaterialUiModule } from './modules/material-ui/material-ui.module';
     AppRoutingModule,
     CategoryModule,
     BrowserAnimationsModule,
+    MaterialUiModule,
   ],
   providers: [
     {

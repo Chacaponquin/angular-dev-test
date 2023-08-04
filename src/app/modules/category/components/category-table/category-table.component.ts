@@ -29,9 +29,8 @@ export class CategoryTableComponent implements OnInit {
     this.deleteLoading = true;
 
     this.service.deleteCategory(categoryID).subscribe(() => {
-      this.deleteLoading = false;
-
       this.getCategories();
+      this.deleteLoading = false;
     });
   }
 }

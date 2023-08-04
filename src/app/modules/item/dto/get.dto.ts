@@ -1,5 +1,5 @@
 import { Item } from '../model';
 
-export interface GetItemDTO {
+export interface GetItemResponse {
   items: Array<Item>;
 }

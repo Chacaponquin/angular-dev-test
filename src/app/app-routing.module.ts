@@ -7,12 +7,12 @@ import { CreateCategoryComponent } from './modules/category/components/create-ca
 import { ROUTES } from './constants/routes';
 import { UpdateCategoryComponent } from './modules/category/components/update-category/update-category.component';
 import { UpdateItemComponent } from './modules/item/components/update-item/update-item.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: '/items',
-    pathMatch: 'full',
+    path: ROUTES.ROOT,
+    component: HomeComponent,
   },
   {
     path: ROUTES.ITEMS_LIST,
